@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   function Jukebox(playing) {
     this.isPlaying = playing;
     const audio = $("#audio1").get(0);
@@ -7,7 +6,6 @@ $(document).ready(function() {
     var tracks = ['Canon.m4a', 'Bambo.m4a'];
     var trackNum = 0;
     $('#audio1').attr('src', tracks[trackNum]);
-
     this.playIt = function() {
       if (this.isPlaying) {
         audio.play();
@@ -17,13 +15,11 @@ $(document).ready(function() {
         this.isPlaying = true;
       }
     }
-
     this.stopIt = function() {
       audio.pause();
       audio.currentTime = 0;
       this.isPlaying = true;
     }
-
     this.loadNext = function() {
       if(trackNum == tracks.length-1){
         $('#audio1').attr('src', tracks[trackNum])
@@ -35,7 +31,6 @@ $(document).ready(function() {
         audio.play();
       }
     }
-
     this.loadPrev = function() {
       if(trackNum==0){
         $('#audio1').attr('src', tracks[0]);
@@ -47,17 +42,13 @@ $(document).ready(function() {
         audio.play();
       }
      }
-
      this.addSong = function() {
        path = $("#addSong").val();
        tracks.push(path);
        console.log(tracks);
      }
-
      this.spotiSong = function() {
-
      }
      }
   juke = new Jukebox(true);
-
 });
